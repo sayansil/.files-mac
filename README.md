@@ -10,7 +10,7 @@ brew install --cask karabiner-elements
 
 - This installs two applications: **Karabiner-Elements** and **Karabiner-EventViewer**
 
-- In your Mac open *System Preferences > Security & Privacy > Privacy > Input Monitoring*
+- Open *System Preferences > Security & Privacy > Privacy > Input Monitoring*
 
 - Add the following to the *Input Monitoring* section and enable them.
 
@@ -52,7 +52,6 @@ brew install --cask karabiner-elements
 
 ```shell
 brew install koekeishiya/formulae/skhd
-brew services start skhd
 ```
 
 - Create new config file for skhd
@@ -63,6 +62,12 @@ chmod +x ~/.config/skhd/skhdrc
 ```
 
 - Populate the `skhdrc` file with your config. Example [here](https://github.com/koekeishiya/skhd/blob/master/examples/skhdrc).
+
+- Make sure `skhd` starts everytime on startup
+
+```shell
+brew services start skhd
+```
 
 ---
 
@@ -110,3 +115,26 @@ limelight --config ~/.config/limelight/limelightrc
 ```
 
 ---
+
+## Setup `yabai` (WM)
+
+- Install [yabai](https://github.com/koekeishiya/yabai)
+
+```shell
+brew install koekeishiya/formulae/yabai
+```
+
+- Create config file. Example [here](https://github.com/koekeishiya/yabai/blob/master/examples/yabairc).
+
+```shell
+touch ~/.config/yabai/yabairc
+chmod +x ~/.config/yabai/yabairc
+```
+
+---
+
+## Additional pre-requisites
+
+- Open *System Preferences > Accessibility > Display* and check the *Reduce motion* option for smoother switch between workspaces.
+
+![Settings page](https://www.linkpicture.com/q/Screenshot-2022-03-10-at-10.07.10-PM.png)
