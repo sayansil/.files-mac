@@ -27,7 +27,6 @@ yabai -m space 4 --label four
 yabai -m space 5 --label five
 yabai -m space 6 --label six
 yabai -m space 9 --label nine
-yabai -m space 0 --label ten
 
 # float system preferences. Most of these just disable Yabai form resizing them.
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off

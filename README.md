@@ -1,5 +1,25 @@
 # Configure yabai in macOS
 
+## Pre-requisites
+
+- Install [jq](https://github.com/stedolan/jq) to parse json in bash scripts
+
+```shell
+brew install jq
+```
+
+- Open *System Preferences > Accessibility > Display* and check the *Reduce motion* option for smoother switch between workspaces.
+
+![Settings page](https://www.linkpicture.com/q/Screenshot-2022-03-10-at-10.07.10-PM.png)
+
+- Open *System Preferences > Mission Control*
+
+  - Uncheck the *Automatically rearrange Spaces based on most recent use* option
+
+  - Check the *Displays have separate Spaces* option
+
+![Settings page](https://www.linkpicture.com/q/Screenshot-2022-03-11-at-12.09.48-AM.png)
+
 ## Setup `hyper` key (⌃ ⌥ ⇧ ⌘)
 
 - Install [Karabiner](https://karabiner-elements.pqrs.org/)
@@ -63,7 +83,7 @@ chmod +x ~/.config/skhd/skhdrc
 
 - Populate the `skhdrc` file with your config. Example [here](https://github.com/koekeishiya/skhd/blob/master/examples/skhdrc).
 
-- Make sure `skhd` starts everytime on startup
+- Make `skhd` start everytime on startup
 
 ```shell
 brew services start skhd
@@ -100,18 +120,11 @@ OR create a symlink of `bin/limelight` there.
 ln -s bin/limelight /usr/local/bin/limelight
 ```
 
-- Create config file and set it as default
+- Create config file. Example [here](https://github.com/sayansil/.files-mac/blob/main/config/limelight/limelightrc).
 
 ```shell
 touch ~/.config/limelight/limelightrc
 chmod +x ~/.config/limelight/limelightrc
-limelight --config ~/.config/limelight/limelightrc
-```
-
-- Write and test new config
-
-```shell
-limelight --config ~/.config/limelight/limelightrc
 ```
 
 ---
@@ -131,10 +144,8 @@ touch ~/.config/yabai/yabairc
 chmod +x ~/.config/yabai/yabairc
 ```
 
----
+- Make `yabai` start everytime on startup
 
-## Additional pre-requisites
-
-- Open *System Preferences > Accessibility > Display* and check the *Reduce motion* option for smoother switch between workspaces.
-
-![Settings page](https://www.linkpicture.com/q/Screenshot-2022-03-10-at-10.07.10-PM.png)
+```shell
+brew services start yabai
+```
